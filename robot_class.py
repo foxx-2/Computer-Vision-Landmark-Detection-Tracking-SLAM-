@@ -79,8 +79,8 @@ class robot:
            
         measurements = []
         for i, landmark in enumerate(self.landmarks):
-            dx = abs(self.x - landmark[0]) + self.rand() * self.measurement_noise
-            dy = abs(self.y - landmark[1]) + self.rand() * self.measurement_noise
+            dx = abs(landmark[0] - self.x) + self.rand() * self.measurement_noise
+            dy = abs(landmark[1 - self.y]) + self.rand() * self.measurement_noise
             if dx**2 + dy**2 <= self.measurement_range**2:
                 measurements.append([i, dx, dy]);
         
